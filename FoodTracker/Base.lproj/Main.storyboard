@@ -113,15 +113,15 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="Rbw-fi-9r7" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
-                                            <rect key="frame" x="98" y="37" width="240" height="44"/>
-                                            <animations/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </view>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="90" placeholderIntrinsicHeight="90" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="MV7-Z9-YM5">
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                             <animations/>
                                         </imageView>
+                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="Rbw-fi-9r7" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                            <rect key="frame" x="98" y="37" width="100" height="44"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
                                     </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -130,6 +130,7 @@
                                     <outlet property="nameLabel" destination="gBg-AN-n6Z" id="IrT-oN-pMj"/>
                                     <outlet property="photoImageView" destination="MV7-Z9-YM5" id="Nx0-5x-8bC"/>
                                     <outlet property="ratingControl" destination="Rbw-fi-9r7" id="WgB-16-awc"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="Iph-P7-cVO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -186,10 +187,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U6n-4h-QMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1137" y="350"/>
+            <point key="canvasLocation" x="1183" y="810"/>
         </scene>
     </scenes>
     <resources>
         <image name="defaultPhoto" width="320" height="320"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Iph-P7-cVO"/>
+    </inferredMetricsTieBreakers>
 </document>

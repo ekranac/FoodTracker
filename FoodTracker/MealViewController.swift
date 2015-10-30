@@ -27,6 +27,17 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         nameTextField.delegate=self
         checkValidMealName()
         
+        if let meal = meal
+        {
+            // Set the info from the existing meal object
+            navigationItem.title = meal.name
+            nameTextField.text = meal.name
+            photoImageView.image = meal.photo
+            ratingControl.rating = meal.rating
+            
+            saveButton.enabled = true
+        }
+        
     }
     // MARK: UITextFieldDelegate
     func textFieldShouldReturn(textField: UITextField) -> Bool
@@ -72,7 +83,17 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     
     @IBAction func cancel(sender: UIBarButtonItem)
     {
-        dismissViewControllerAnimated(true, completion: nil)
+        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddMealMode
+        {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        else
+        {
+            navigationController!.popViewControllerAnimated(true)
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)

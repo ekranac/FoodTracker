@@ -19,7 +19,7 @@ class RatingControl: UIView {
     
     var ratingButtons = [UIButton]()
     
-    let spacing = 10
+    let spacing = 5
     let stars = 5
 
     // MARK: Initializaiton
@@ -49,7 +49,7 @@ class RatingControl: UIView {
     
     override func layoutSubviews()
     {
-        let buttonSize = Int(frame.size.height)
+        let buttonSize = Int(frame.size.height) // size of frame/ cell
         var buttonFrame = CGRect(x: 0, y: 0, width: buttonSize, height: buttonSize)
         
         // Offset each button's origin by the length of the button plus spacing
